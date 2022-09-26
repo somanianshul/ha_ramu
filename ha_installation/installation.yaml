@@ -1,0 +1,60 @@
+Acer SPIN Laptop:
+# ----------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------
+
+Ramu: http://192.168.86.42:8123
+
+Home assistant Installation:
+  # ----------------------------------------------------------------------------------------------------------
+  Bios config:
+    - format USB drive with
+    - use balena etcher to flsh ubuntu desktop os on the usb drive
+    - boot acer laptop in boot menu using F2 on boot
+    - set supervisor password:
+        - super visor passsord: 1234
+    - disable secure boot
+    - enable boot window
+
+  HA installation:
+    - boot form the usb drive - ubuntu live iso
+    - download generic haos img.xz
+      - use ubunut imgae loader to write the haos on the laptop disk
+    - reboot the laptop
+
+  Wifi Connectivity:
+    - check network status: sudo nmcli general status
+    - check hostname: sudo nmcli general hostname
+    - check permissions: sudo nmcli general permissions
+    - check device staus: sudo nmcli dev status
+    - check WIFI radio: sudo nmcli radio wifi
+    - disconnect from wifi: sudo nmcli d disconnect wlan0
+    - check list of wifi netwprks: sudo nmcli d wifi list
+    - connect to wifi ssid: sudo nmcli dev wifi connect somani password grandballoons437
+
+  error opening the Webpage:
+    - connection refused
+    - reboot the system for WIFI to be connected on boot to downlload supervisor content.
+
+Enable SSH access:
+  - enable advanced mode from your user account on HA web UI
+  - settings -> add-ons -> add-on store - ssh & web Terminal -> Install
+  - enable watchdog and show in sidebar
+  - Configuration:
+      - ssh:
+        allow_agent_forwarding: false
+        allow_remote_port_forwarding: false
+        allow_tcp_forwarding: false
+        authorized_keys: []
+        compatibility_mode: false
+        password: onslaught
+        sftp: false
+        username: anshul
+
+Install HACS:
+  - take ssh connection of the server
+  - run "wget -O - https://get.hacs.xyz | bash -"
+  - ha ha restart
+  - settings -> devices & services -> add integration - hacs
+  - check all check boxes -> submit
+  - authorize github on hacs
+  - add hacs to lab area

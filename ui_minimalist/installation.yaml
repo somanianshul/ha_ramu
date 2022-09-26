@@ -1,0 +1,20 @@
+Acer SPIN Laptop:
+# ----------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------
+
+installation:
+  - hacs -> integration:
+      - minimalist
+      - integration:
+          - browser_mod
+      - frontend:
+          - auto-entities
+          - button-card
+          - card-mod
+          - mini-graph
+          - mini-media-player
+          - my cards bundle
+            - add custome repository first
+          - light entity card
+  - restart HA
+  - settings -> add integration -> minimalist
