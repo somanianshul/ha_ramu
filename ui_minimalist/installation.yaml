@@ -18,3 +18,5 @@ installation:
           - light entity card
   - restart HA
   - settings -> add integration -> minimalist
+    - configure:
+      - 
